@@ -6,6 +6,8 @@ sap.ui.define([
 	return Controller.extend("de.mangels.zfb.ZFLUGBUCH.controller.Main", {
 		onInit: function () {
 
+			this.getView().setModel(this.getOwnerComponent().getModel("GLOBAL"), "global");
+
 		}
 	});
 });
