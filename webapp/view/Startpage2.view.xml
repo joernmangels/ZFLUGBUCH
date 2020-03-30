@@ -1,0 +1,119 @@
+<mvc:View controllerName="de.mangels.zfb.ZFLUGBUCH.controller.Startpage" xmlns:t="sap.ui.table" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns="sap.m" height="100%">
+	<Page id="p1" title="{i18n>title} - {global>/_APPVERSION}">
+		<content>
+			<!--<Table rows="{data>/}">-->
+			<!--<extension>-->
+			<!--	<m:OverflowToolbar>-->
+			<!--		<m:Title id="title" text="Products"/>-->
+			<!--	</m:OverflowToolbar>-->
+			<!--</extension>-->
+			<!--	<columns>-->
+			<!--		<Column width="13rem">-->
+			<!--			<m:Label text="Datum"/>-->
+			<!--			<template>-->
+			<!--				<m:Text text="{datum}"/>-->
+			<!--			</template>-->
+			<!--		</Column>-->
+			<!--		<Column width="11rem">-->
+			<!--			<m:Label text="Muster"/>-->
+			<!--			<template>-->
+			<!--				<m:Text text="{muster}"/>-->
+			<!--			</template>-->
+			<!--		</Column>-->
+			<!--	</columns>-->
+			<!--</Table>-->
+			<Table id="mainTable" enableBusyIndicator="true" fixedLayout="false" inset="false" mode="None" items="{data>/DataSet}" itemPress="onTableItemPressed">
+				<columns>
+					<Column width="5em">
+						<Text text="Lfdnr"/>
+					</Column>
+					<Column width="13em">
+						<Text text="Datum"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Muster"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Kennzeichen"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Startplatz"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Zielplatz"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Startzeit"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Landezeit"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Blockzeit1"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Blockzeit2"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Anzahl Landungen"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Flugzeit"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Flugzeit+BZ"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="PIC"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Flugart"/>
+					</Column>
+					<Column width="11em" minScreenWidth="Tablet" demandPopin="true">
+						<Text text="Bemerkung"/>
+					</Column>
+				</columns>
+				<items>
+					<ColumnListItem type="Navigation" vAlign="Middle">
+						<cells>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>lfdnr}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>datum}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>muster}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>kennzeichen}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>startplatz}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>landeplatz}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>startzeit}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>landezeit}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>blockzeit1}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>blockzeit2}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>landungen}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>flugzeit}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>blockzeit}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>pic}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>flugart}"/>
+							<!-- **************************************************************************************************************************************** -->
+							<Text text="{data>bemerkung}"/>
+							<!-- **************************************************************************************************************************************** -->
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</content>
+	</Page>
+</mvc:View>

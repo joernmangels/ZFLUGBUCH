@@ -1,0 +1,116 @@
+<mvc:View controllerName="de.mangels.zfb.ZFLUGBUCH.controller.Startpage" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc"
+	xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:m="sap.m" height="100%">
+	<m:Page id="p1" title="{i18n>title} - {global>/_APPVERSION}">
+		<m:content>
+			<Table id="mainTable" visibleRowCountMode="Auto" rows="{ path: 'data>/DataSet', sorter: { path: 'data>lfdnr', descending: true} }">
+				<extension>
+					<m:OverflowToolbar>
+						<!--<m:Title id="title" text="Products"/>-->
+						<m:Button text="Lfdnr" icon="sap-icon://sort" tooltip="Sort Lfdnr" press="sortLfdnr"/>
+					</m:OverflowToolbar>
+				</extension>
+				<columns>
+					<Column id="lfdnr" width="6rem">
+						<m:Label text="Lfdnr"/>
+						<template>
+							<m:Text text="{data>lfdnr}"/>
+						</template>
+					</Column>
+					<Column id="datum" width="10rem">
+						<m:Label text="Datum"/>
+						<template>
+							<!--<m:Text text="{data>datum}"/>-->
+							<m:Text text="{ path: 'data>datum', type: 'sap.ui.model.type.Date', formatOptions: {source: {pattern: 'dd/MM/yyyy'}, style: 'long'} }"
+								wrapping="false"/>
+						</template>
+					</Column>
+					<Column width="6rem">
+						<m:Label text="Muster"/>
+						<template>
+							<m:Text text="{data>muster}"/>
+						</template>
+					</Column>
+					<Column width="6rem">
+						<m:Label text="Flg-KZ"/>
+						<template>
+							<m:Text text="{data>kennzeichen}"/>
+						</template>
+					</Column>
+					<Column width="6rem">
+						<m:Label text="Startplatz"/>
+						<template>
+							<m:Text text="{data>startplatz}"/>
+						</template>
+					</Column>
+					<Column width="6rem">
+						<m:Label text="Zielplatz"/>
+						<template>
+							<m:Text text="{data>landeplatz}"/>
+						</template>
+					</Column>
+					<Column width="7rem">
+						<m:Label text="Startzeit"/>
+						<template>
+							<m:Text text="{data>startzeit}"/>
+						</template>
+					</Column>
+					<Column width="7rem">
+						<m:Label text="Landezeit"/>
+						<template>
+							<m:Text text="{data>landezeit}"/>
+						</template>
+					</Column>
+					<Column width="7rem">
+						<m:Label text="Blockzeit1"/>
+						<template>
+							<m:Text text="{data>blockzeit1}"/>
+						</template>
+					</Column>
+					<Column width="7rem">
+						<m:Label text="Blockzeit2"/>
+						<template>
+							<m:Text text="{data>blockzeit2}"/>
+						</template>
+					</Column>
+					<Column width="4rem">
+						<m:Label text="Ldg"/>
+						<template>
+							<m:Text text="{data>landungen}"/>
+						</template>
+					</Column>
+					<Column width="7rem">
+						<m:Label text="Flugzeit"/>
+						<template>
+							<m:Text text="{data>flugzeit}"/>
+						</template>
+					</Column>
+					<Column width="7rem">
+						<m:Label text="Flugzeit+BZ"/>
+						<template>
+							<m:Text text="{data>blockzeit}"/>
+						</template>
+					</Column>
+					<Column width="5rem">
+						<m:Label text="PIC"/>
+						<template>
+							<!--<m:Text text="{data>pic}"/>-->
+							<m:CheckBox selected="{data>pic}" displayOnly="true"/>
+						</template>
+					</Column>
+					<Column width="6rem">
+						<m:Label text="Flugart"/>
+						<template>
+							<m:Text text="{data>flugart}"/>
+						</template>
+					</Column>
+					<Column width="10rem">
+						<m:Label text="Bemerkung"/>
+						<template>
+							<m:Text text="{data>bemerkung}"/>
+						</template>
+					</Column>
+				</columns>
+			</Table>
+		</m:content>
+	</m:Page>
+</mvc:View>

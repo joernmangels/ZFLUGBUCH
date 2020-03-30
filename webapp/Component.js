@@ -24,7 +24,7 @@ sap.ui.define([
 			
 			// enable routing
 			this.getRouter().initialize();
-
+			
 			// set the device model
 			this.setModel(models.createDeviceModel(), "device");
 			
@@ -53,6 +53,7 @@ sap.ui.define([
 			
 			//Load Flugbuchdata
 			this.loadData();
+
 		},
 		loadData: function () {
 			var url;
@@ -75,7 +76,7 @@ sap.ui.define([
 			oEntry.ENDE = s_datum_ende;
 			
 			oModel.loadData(url, oEntry, true, "POST");
-			this.setModel(oModel, "data");
+			this.setModel(oModel, "DATA");
 			
 		}
 	});
