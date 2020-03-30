@@ -1,12 +1,26 @@
 <mvc:View controllerName="de.mangels.zfb.ZFLUGBUCH.controller.Startpage" xmlns="sap.ui.table" xmlns:mvc="sap.ui.core.mvc"
 	xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:m="sap.m" height="100%">
-	<m:Page id="p1" title="{i18n>title} - {global>/_APPVERSION}">
+	<!--<m:Page id="p1" title="{i18n>title} - {global>/_APPVERSION}">-->
+	<m:Page id="p1">
+		<m:customHeader>
+			<m:Bar>
+				<m:contentLeft></m:contentLeft>
+				<m:contentMiddle>
+					<m:Title text="{i18n>title} - {global>/_APPVERSION}"/>
+				</m:contentMiddle>
+				<m:contentRight>
+					<m:ToggleButton icon="sap-icon://full-screen" press="handleFullscreen1" class="sapUiSmallMarginBottom"/>
+				</m:contentRight>
+			</m:Bar>
+		</m:customHeader>
 		<m:content>
 			<Table id="mainTable" visibleRowCountMode="Auto" rows="{ path: 'data>/DataSet', sorter: { path: 'data>lfdnr', descending: true} }">
 				<extension>
 					<m:OverflowToolbar>
 						<!--<m:Title id="title" text="Products"/>-->
-						<m:Button text="Lfdnr" icon="sap-icon://sort" tooltip="Sort Lfdnr" press="sortLfdnr"/>
+						<m:Button text="Lfdnr" icon="sap-icon://sort" tooltip="Sort Lfdnr" press="sortLfdnr" class="sapUiSmallMarginEnd"/>
+						<m:ToolbarSpacer/>
+						<m:Button icon="sap-icon://refresh" press="onRefresh"/>
 					</m:OverflowToolbar>
 				</extension>
 				<columns>
