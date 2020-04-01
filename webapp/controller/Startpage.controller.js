@@ -12,7 +12,13 @@ sap.ui.define([
 		onInit: function () {
 
 			this.getView().setModel(this.getOwnerComponent().getModel("GLOBAL"), "global");
-			this.getView().setModel(this.getOwnerComponent().getModel("DATA"), "data");
+			// this.getView().setModel(this.getOwnerComponent().getModel("DATA"), "data");
+
+			var oModelC = this.getOwnerComponent().getModel("DATA");
+			this.getView().setModel(oModelC, "data");
+			// oModelC.attachRequestCompleted(function (oEvent) {
+			// 	sap.ui.core.BusyIndicator.hide();
+			// });
 
 			//Initial sorting
 			// var oView = this.getView();
@@ -55,9 +61,6 @@ sap.ui.define([
 				break;
 			}
 		},
-		onRefresh: function (oEvent) {
-			this.getOwnerComponent().handleRefresh(oEvent,this.getView());
-		},
 		sortLfdnr: function (oEvent) {
 			var oView = this.getView();
 			var oTable = oView.byId("mainTable");
@@ -72,9 +75,26 @@ sap.ui.define([
 			});
 
 			oTable.getBinding("rows").sort(oSorter);
-
 			this._bSortColumnDescending = !this._bSortColumnDescending;
-
+		},
+		onRefresh: function (oEvent) {
+			this.getOwnerComponent().handleRefresh(oEvent, this.getView());
+		},
+		onCreate: function (oEvent) {
+			this.getOwnerComponent().handleCreate(oEvent, this.getView());
+		},
+		onDelete: function (oEvent) {
+			this.getOwnerComponent().handleDelete(oEvent, this.getView());
+		},
+		onChange: function (oEvent) {
+			this.getOwnerComponent().handleChange(oEvent, this.getView());
+		},
+		onUpload: function (oEvent) {
+			this.getOwnerComponent().handleUpload(oEvent, this.getView());
+		},
+		onInfo: function (oEvent) {
+			this.getOwnerComponent().handleInfo(oEvent, this.getView());
 		}
+
 	});
 });

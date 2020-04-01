@@ -14,11 +14,17 @@
 			</m:Bar>
 		</m:customHeader>
 		<m:content>
-			<Table id="mainTable" visibleRowCountMode="Auto" rows="{ path: 'data>/DataSet', sorter: { path: 'data>lfdnr', descending: true} }">
+			<Table id="mainTable" visibleRowCountMode="Auto" rows="{ path: 'data>/DataSet', sorter: { path: 'lfdnr', descending: true} }">
 				<extension>
 					<m:OverflowToolbar>
 						<!--<m:Title id="title" text="Products"/>-->
-						<m:Button text="Lfdnr" icon="sap-icon://sort" tooltip="Sort Lfdnr" press="sortLfdnr" class="sapUiSmallMarginEnd"/>
+						<m:Button icon="sap-icon://sort" tooltip="Sort Lfdnr" press="sortLfdnr" class="sapUiSmallMarginEnd"/>
+						<m:Button icon="sap-icon://create" tooltip="Neuer Datensatz" press="onCreate" class="sapUiSmallMarginEnd"/>
+						<m:Button icon="sap-icon://delete" tooltip="Datensatz löschen" press="onDelete" class="sapUiSmallMarginEnd"/>
+						<m:Button icon="sap-icon://edit" tooltip="Datensatz ändern" press="onChange" class="sapUiSmallMarginEnd"/>
+						<m:Button icon="sap-icon://upload" tooltip="Datensätze hochladen" press="onUpload" class="sapUiSmallMarginEnd"/>
+						<m:Button icon="sap-icon://message-information" tooltip="Auswertungen" press="onInfo" class="sapUiSmallMarginEnd"/>
+						
 						<m:ToolbarSpacer/>
 						<m:Button icon="sap-icon://refresh" press="onRefresh"/>
 					</m:OverflowToolbar>

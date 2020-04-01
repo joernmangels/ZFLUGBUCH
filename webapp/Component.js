@@ -62,8 +62,8 @@ sap.ui.define([
 
 			var oModelG = this.getModel("GLOBAL");
 			var _URL = oModelG.getProperty("/_URL");
-			
-			// sap.ui.core.BusyIndicator.show();
+
+			//sap.ui.core.BusyIndicator.show();
 
 			url = _URL + "/FLUGBUCH/load_flugdaten.php";
 
@@ -79,14 +79,14 @@ sap.ui.define([
 			oModel.loadData(url, oEntry, false, "POST");
 			this.setModel(oModel, "DATA");
 			//oModel.refresh(true);
-			
+
 			// oModel.attachRequestCompleted(function () {
 			// 	sap.ui.core.BusyIndicator.hide();
 			// });
 		},
-		handleRefresh: function (evt,oView) {
-			// var reload = this.getModel("i18n").getResourceBundle().getText("reload");
-			// var oModel = this.getModel("DATA");
+		handleRefresh: function (evt, oView) {
+			var reload = this.getModel("i18n").getResourceBundle().getText("reload");
+			//var oModel = this.getModel("DATA");
 			// // oModel.setData({modelData:{}});
 			// // oModel.updateBindings(true);
 			// if (oModel) {
@@ -96,8 +96,22 @@ sap.ui.define([
 			// }
 			// var oTable = oView.byId("mainTable");
 			// oTable.getBinding("rows").refresh();
-			// this.loadData();
-			// sap.m.MessageToast.show(reload);
-		}
+			this.loadData();
+			sap.m.MessageToast.show(reload);
+		},
+		handleCreate: function (evt, oView) {
+			//var oContext = oEvent.getSource().getBindingContext("menu");
+			//var oModel = oEvent.getSource().getModel("menu");
+			//var target = oModel.getProperty(oContext.getPath()).target;
+
+			//var oRouter = this.getRouterFor(this);
+			//oRouter.navTo(target);
+			
+			this.getRouter().navTo("onNavToCreate", {}, false);
+		},
+		handleDelete: function (evt, oView) {},
+		handleChange: function (evt, oView) {},
+		handleUpload: function (evt, oView) {},
+		handleInfo: function (evt, oView) {}
 	});
 });

@@ -59,11 +59,9 @@
 			}
 		},
 		"resources": {
-			"css": [
-				{
-					"uri": "css/style.css"
-				}
-			]
+			"css": [{
+				"uri": "css/style.css"
+			}]
 		},
 		"routing": {
 			"config": {
@@ -79,22 +77,28 @@
 					"target": [
 						"startpage"
 					]
-				}	
-			},
-			"routes": [
-				{
-					"name": "",
-					"pattern": "home",
-					"target": [
-						"startpage"
-					]
 				}
-			],
+			},
+			"routes": [{
+				"name": "home",
+				"pattern": "home",
+				"target": [
+					"startpage"
+				]
+			}, {
+				"pattern": "onNavToCreate",
+				"name": "onNavToCreate",
+				"target": "Createpage"
+			}],
 			"targets": {
 				"startpage": {
 					"viewName": "Startpage",
 					"viewId": "Startpage",
 					"viewLevel": 0
+				},
+				"Createpage": {
+					"viewType": "XML",
+					"viewName": "Createpage"
 				}
 			}
 		}
